@@ -1,0 +1,15 @@
+﻿<Window x:Class="DriveClonerWPF.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DriveClonerWPF"
+        mc:Ignorable="d"
+        Title="Информация" Height="150" Width="463">
+    <Grid Margin="0,0,10,-6">
+        <Button Content="Закрыть оптический дисковод" HorizontalAlignment="Left" Margin="245,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.983" Width="185"/>
+        <Label Content="Вставьте оптический диск в привод" HorizontalAlignment="Left" Margin="20,46,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="245,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" TextChanged="TextBox_TextChanged" Height="22"/>
+
+    </Grid>
+</Window>
