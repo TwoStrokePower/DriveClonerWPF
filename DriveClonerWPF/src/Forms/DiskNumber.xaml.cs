@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,15 @@ namespace DriveClonerWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            SetCurrFormToParam();
+            OpenDrive();
+            backgroundWorker.RunWorkerAsync();
+            WaitDiskLoad();
+            backgroundWorker.CancelAsync();
+            OpenStepCopy();
+            OpenDrive();
+            this.Close();
         }
-    }
+
+        
 }

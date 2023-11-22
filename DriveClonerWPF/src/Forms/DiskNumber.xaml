@@ -51,7 +51,7 @@
             <TextBox Grid.Column="0" Width="120"></TextBox>
             <DatePicker Grid.Column="2"></DatePicker>
         </Grid>
-        <Button Content="Следущий шаг" Grid.Column="1" Grid.Row="6" Height="26" Width="120"  Margin="210,0,44,0"></Button>
+        <Button Content="Следущий шаг" Grid.Column="1" Grid.Row="6" Height="26" Width="120"  Margin="210,0,44,0" Click="Button_Click_1"></Button>
     </Grid>
 
 
