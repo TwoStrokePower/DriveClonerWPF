@@ -25,9 +25,9 @@
             <Label Content="Тип УПО/СКО/УП:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"></Label>
             <Label Content="Тип диска (Загрузочный/Дистрибутивный):" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"></Label>
             <Label Content="Номер ПО" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"></Label>
-            <ListBox Grid.Row="0" Grid.Column="1" Width="380" />
-            <ListBox Grid.Row="1" Grid.Column="1" Width="380" />
-            <TextBox Grid.Row="2" Grid.Column="1" Width="380"></TextBox>
+            <ListBox x:Name="domainUpDownTypeCko" Grid.Row="0" Grid.Column="1" Width="380" />
+            <ListBox x:Name="domainUpDownDiskType" Grid.Row="1" Grid.Column="1" Width="380" />
+            <TextBox x:Name="twxtBoxCkoNumAndVer" Grid.Row="2" Grid.Column="1" Width="380"></TextBox>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -36,10 +36,10 @@
                 <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Имя обрабатываемого файла:"></Label>
-            <ProgressBar Grid.Row="1" Height="26" Width="780"></ProgressBar>
-            <ProgressBar Grid.Row="2" Height="26" Width="780"></ProgressBar>
-            <Button Content="Скопировать" Grid.Row="3" Height="26" Width="120"  Margin="620,0,10,0"></Button>
+            <Label Name="label5" Grid.Row="0" Content="Имя обрабатываемого файла:"></Label>
+            <ProgressBar x:Name="progressBarAll" Grid.Row="1" Height="26" Width="780"></ProgressBar>
+            <ProgressBar x:Name="progressBarCurrentFile" Grid.Row="2" Height="26" Width="780"></ProgressBar>
+            <Button x:Name="button1" Content="Скопировать" Grid.Row="3" Height="26" Width="120"  Margin="620,0,10,0" Click="button1_Click"></Button>
         </Grid>
 
     </Grid>
