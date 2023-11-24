@@ -1,5 +1,5 @@
-﻿using CopyerCKO.src;
-using CopyerCKO.src.Types;
+﻿using DriveClonerWPF.src;
+using DriveClonerWPF.src.Types;
 using SecuredStorage.ISO;
 using System;
 using System.Collections.Generic;
@@ -17,6 +17,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace DriveClonerWPF
 {

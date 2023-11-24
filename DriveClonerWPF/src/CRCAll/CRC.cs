@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace CopyerCKO.src.CRCAll
+namespace DriveClonerWPF.src.CRCAll
 {
     public static class CRC
     {

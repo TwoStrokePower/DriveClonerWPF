@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CopyerCKO.src
+namespace DriveClonerWPF
 {
     public class Post
     {

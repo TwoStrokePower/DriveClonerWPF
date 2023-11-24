@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace DriveClonerWPF
 {
@@ -22,6 +24,7 @@ namespace DriveClonerWPF
     public partial class InsertDrive : Window
     {
         private BackgroundWorker bgWorker = null;
+
         public InsertDrive()
         {
             InitializeComponent();
@@ -47,15 +50,17 @@ namespace DriveClonerWPF
         {
             CloseDrive();
         }
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             if (this.bgWorker.CancellationPending)
                 this.Close();
         }
-
         private void InsertDrive_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 10);
+            timer.Start();
         }
     }
 }

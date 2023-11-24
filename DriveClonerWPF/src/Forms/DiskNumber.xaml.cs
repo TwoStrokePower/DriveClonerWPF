@@ -1,5 +1,4 @@
-﻿using CopyerCKO.src;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -17,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
+using Path = System.IO.Path;
 
 namespace DriveClonerWPF
 {
@@ -28,7 +28,9 @@ namespace DriveClonerWPF
         private Params _params = new Params();
         private MainFormCopy mainForm;
         private InsertDrive insertDrive;
-        private CopyerCKO.src.Forms.SettingsForm settings = null;
+        private SettingsForm settings = null;
+        private readonly BackgroundWorker backgroundWorker = new BackgroundWorker();
+
         public DiskNumber()
         {
             InitializeComponent();
@@ -53,14 +55,16 @@ namespace DriveClonerWPF
 
             _params.Post = new Post();
             _params.Post.Number = textBoxPostNumber.Text;
-            _params.Post.DateStamp = dateTimePickerPostStamp.Value;
+            _params.Post.DateStamp = dateTimePickerPostStamp.SelectedDate.Value;
             _params.Post.InputNumber = textBoInputPostNumber.Text;
-            _params.Post.InputDateStamp = dateTimePickerPostInsideStamp.Value;
+            _params.Post.InputDateStamp = dateTimePickerPostInsideStamp.SelectedDate.Value;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SetCurrFormToParam();
             OpenDrive();
+            backgroundWorker.DoWork += BackgroundWorker_DoWork;
+            backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
             backgroundWorker.RunWorkerAsync();
             WaitDiskLoad();
             backgroundWorker.CancelAsync();
@@ -111,6 +115,28 @@ namespace DriveClonerWPF
             //StringBuilder resultString = new StringBuilder();
             //int res = mciSendString("get cdaudio door closed", resultString, 0, IntPtr.Zero);
             //return;
+        }
+        private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            insertDrive = new InsertDrive(ref backgroundWorker);
+            insertDrive.ShowDialog();
+        }
+
+        private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            insertDrive.Close();
+        }
+
+        private void BackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            insertDrive.Close();
+        }
+
+        private void НастройкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settings = new SettingsForm();
+            settings.ShowDialog();
+            Properties.Settings.Default.Reload();
         }
 
     }

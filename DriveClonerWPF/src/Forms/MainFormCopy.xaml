@@ -27,7 +27,7 @@
             <Label Content="Номер ПО" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"></Label>
             <ListBox x:Name="domainUpDownTypeCko" Grid.Row="0" Grid.Column="1" Width="380" />
             <ListBox x:Name="domainUpDownDiskType" Grid.Row="1" Grid.Column="1" Width="380" />
-            <TextBox x:Name="twxtBoxCkoNumAndVer" Grid.Row="2" Grid.Column="1" Width="380"></TextBox>
+            <TextBox x:Name="textBoxCkoNumAndVer" Grid.Row="2" Grid.Column="1" Width="380"></TextBox>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>

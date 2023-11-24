@@ -1,4 +1,4 @@
-﻿namespace CopyerCKO.src.Types
+﻿namespace DriveClonerWPF.src.Types
 {
     public class DiskType
     {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CopyerCKO.src.Types;
+using DriveClonerWPF.src.Types;
 
-namespace CopyerCKO.src
+namespace DriveClonerWPF
 {
     public class Params
     {

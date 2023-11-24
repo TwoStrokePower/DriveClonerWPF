@@ -39,7 +39,7 @@
             </Grid.ColumnDefinitions>
             <Label Content="от:" Grid.Column="1" HorizontalAlignment="Center"></Label>
             <TextBox x:Name="textBoxPostNumber" Grid.Column="0" Width="120"></TextBox>
-            <DatePicker Name="dateTimePickerPostStamp" Grid.Column="2"></DatePicker>
+            <DatePicker Name="dateTimePickerPostStamp" Grid.Column="2" SelectedDate="{Binding FCGene, Mode=TwoWay}" SelectedDateFormat="Short"></DatePicker>
         </Grid>
         <Grid Grid.Row="5" Grid.Column="1">
             <Grid.ColumnDefinitions>

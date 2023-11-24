@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CopyerCKO.src.Types
+namespace DriveClonerWPF.src.Types
 {
     public class PoType
     {

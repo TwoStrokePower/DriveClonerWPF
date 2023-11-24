@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace CopyerCKO.src.CRCAll
+namespace DriveClonerWPF.src.CRCAll
 {
     public class Crc64 : HashAlgorithm
     {
