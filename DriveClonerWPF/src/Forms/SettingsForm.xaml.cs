@@ -24,9 +24,10 @@ namespace DriveClonerWPF
         public SettingsForm()
         {
             InitializeComponent();
+            Settings_Load();
         }
 
-        private void Settings_Load(object sender, EventArgs e)
+        private void Settings_Load()
         {
             InitializePathToCopy();
             InitializeDriveList();

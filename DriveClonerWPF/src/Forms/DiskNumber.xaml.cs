@@ -121,12 +121,6 @@ namespace DriveClonerWPF
             insertDrive.Close();
         }
 
-        private void НастройкаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            settings = new SettingsForm();
-            settings.ShowDialog();
-            Properties.Settings.Default.Reload();
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -140,6 +134,13 @@ namespace DriveClonerWPF
             OpenStepCopy();
             OpenDrive();
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            settings = new SettingsForm();
+            settings.ShowDialog();
+            Properties.Settings.Default.Reload();
         }
     }
 }
