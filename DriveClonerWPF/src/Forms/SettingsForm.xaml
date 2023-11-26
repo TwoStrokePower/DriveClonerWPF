@@ -16,8 +16,9 @@
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Content="Оптический привод:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"></Label>
-        <Label Content="Путь для копирования" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"></Label>
+        <Label x:Name="label1" Content="Оптический привод:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"></Label>
+        <Label x:Name="label2" Content="Путь для копирования" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"></Label>
+        <Label x:Name="label3" Content="" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"></Label>
         <ComboBox Name="comboBox1" Grid.Row="0" Grid.Column="1" Width="297" Height="26" SelectionChanged="comboBox1_SelectionChanged"></ComboBox>
         <Button x:Name="button2" Grid.Column="1" Grid.Row="1" Content="Выбрать путь для копирования" Width="220" Height="26" Margin="80,0,0,0" Click="button2_Click"></Button>
         <Button x:Name="button1" Grid.Column="1" Grid.Row="2" Content="Сохранить" Width="80" Margin="210,7,10,7" Click="button1_Click"/>

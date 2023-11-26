@@ -25,7 +25,7 @@ namespace DriveClonerWPF
     {
         private BackgroundWorker bgWorker = null;
 
-        public InsertDrive()
+        public InsertDrive(ref BackgroundWorker bgWorker)
         {
             InitializeComponent();
             this.bgWorker = bgWorker;

@@ -51,14 +51,15 @@ namespace DriveClonerWPF
 
         private void InitializePathToCopy()
         {
-            label3.Text = Properties.Settings.Default.DestDir;
+            label3.Content = Properties.Settings.Default.DestDir;
         }
         private void button2_Click(object sender, RoutedEventArgs e)
         {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
 
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                label3.Text = folderBrowserDialog1.SelectedPath;
+                label3.Content = folderBrowserDialog1.SelectedPath;
                 Properties.Settings.Default.DestDir = folderBrowserDialog1.SelectedPath;
             }
         }

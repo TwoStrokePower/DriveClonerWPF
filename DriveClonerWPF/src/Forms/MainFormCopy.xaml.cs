@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
+using ProgressBar = System.Windows.Controls.ProgressBar;
 
 namespace DriveClonerWPF
 {
@@ -28,7 +29,8 @@ namespace DriveClonerWPF
     {
         private Params param;
         private FileOperations fileOperations;
-        public MainFormCopy()
+        private BackgroundWorker backgroundWorkerCopy = new BackgroundWorker();
+        public MainFormCopy(Params _param)
         {
             InitializeComponent();
             this.param = _param;
@@ -142,7 +144,7 @@ namespace DriveClonerWPF
         {
             pgAll.Minimum = 0;
             pgAll.Value = 0;
-            pgAll.Step = 1;
+            //pgAll.Step = 1;
             pgAll.Maximum = max;
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -200,16 +202,16 @@ namespace DriveClonerWPF
             progressBarCurrentFile.Maximum = (int)currProgressBarPosition.MaxCurrFile;
             progressBarAll.Value = (int)currProgressBarPosition.CurrPositionOfAllFiles;
             progressBarCurrentFile.Value = (int)currProgressBarPosition.CurrPositionInFile;
-            label5.Text = currProgressBarPosition.Message + currProgressBarPosition.FileName;
-            progressBarAll.Update();
-            progressBarCurrentFile.Update();
-            label5.Update();
+            label5.Content = currProgressBarPosition.Message + currProgressBarPosition.FileName;
+            //progressBarAll.Update();
+            //progressBarCurrentFile.Update();
+            //label5.Update();
         }
 
         private void BackgroundWorkerCopy_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Error != null)
-                MessageBox.Show(this, e.Error.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.MessageBox.Show("Ошибка","Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             this.Close();
         }
     }

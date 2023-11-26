@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DriveClonerWPF
 {
-    internal class Programm
+    static class Programm
     {
+       
+
+        
     }
 }

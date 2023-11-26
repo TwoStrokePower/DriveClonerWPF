@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DriveClonerWPF.src;
 using DiscUtils;
+using DiscUtils.Streams;
 
 namespace SecuredStorage.ISO
 {
@@ -50,7 +51,7 @@ namespace SecuredStorage.ISO
             try
             {
                 streamIsoFile = new FileStream(isoFileName, FileMode.Open);
-                DiscUtils.FileSystemInfo[] fsia = FileSystemManager.DetectDefaultFileSystems(streamIsoFile);
+                DiscUtils.FileSystemInfo[] fsia = FileSystemManager.DetectFileSystems(streamIsoFile);
                 if (fsia.Length < 1)
                 {
                     MessageBox.Show("No valid disc file system detected.");

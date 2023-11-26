@@ -29,7 +29,7 @@ namespace DriveClonerWPF
         private MainFormCopy mainForm;
         private InsertDrive insertDrive;
         private SettingsForm settings = null;
-        private readonly BackgroundWorker backgroundWorker = new BackgroundWorker();
+        private BackgroundWorker backgroundWorker = new BackgroundWorker();
 
         public DiskNumber()
         {
@@ -59,19 +59,8 @@ namespace DriveClonerWPF
             _params.Post.InputNumber = textBoInputPostNumber.Text;
             _params.Post.InputDateStamp = dateTimePickerPostInsideStamp.SelectedDate.Value;
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            SetCurrFormToParam();
-            OpenDrive();
-            backgroundWorker.DoWork += BackgroundWorker_DoWork;
-            backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
-            backgroundWorker.RunWorkerAsync();
-            WaitDiskLoad();
-            backgroundWorker.CancelAsync();
-            OpenStepCopy();
-            OpenDrive();
-            this.Close();
-        }
+        
+
         [DllImport("winmm.dll", EntryPoint = "mciSendStringA", CharSet = CharSet.Ansi)]
         protected static extern int mciSendString
         (string mciCommand,
@@ -139,5 +128,18 @@ namespace DriveClonerWPF
             Properties.Settings.Default.Reload();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SetCurrFormToParam();
+            OpenDrive();
+            backgroundWorker.DoWork += BackgroundWorker_DoWork;
+            backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
+            backgroundWorker.RunWorkerAsync();
+            WaitDiskLoad();
+            backgroundWorker.CancelAsync();
+            OpenStepCopy();
+            OpenDrive();
+            this.Close();
+        }
     }
 }

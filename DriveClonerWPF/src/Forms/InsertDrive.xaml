@@ -9,7 +9,7 @@
     <Grid Margin="0,0,10,-6">
         <Button x:Name="button1" Content="Закрыть оптический дисковод" HorizontalAlignment="Left" Margin="245,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.983" Width="185" Click="button1_Click"/>
         <Label Content="Вставьте оптический диск в привод" HorizontalAlignment="Left" Margin="20,46,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="label1"  HorizontalAlignment="Left" Margin="245,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" TextChanged="TextBox_TextChanged" Height="22"/>
+        <TextBox x:Name="label1" HorizontalAlignment="Left" Margin="245,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163" Height="22"/>
 
     </Grid>
 </Window>
