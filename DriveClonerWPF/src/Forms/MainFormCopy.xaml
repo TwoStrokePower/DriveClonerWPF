@@ -37,8 +37,12 @@
                 <RowDefinition Height="30"></RowDefinition>
             </Grid.RowDefinitions>
             <Label Name="label5" Grid.Row="0" Content="Имя обрабатываемого файла:"></Label>
-            <ProgressBar x:Name="progressBarAll" Grid.Row="1" Height="26" Width="780"></ProgressBar>
-            <ProgressBar x:Name="progressBarCurrentFile" Grid.Row="2" Height="26" Width="780"></ProgressBar>
+            <ProgressBar x:Name="progressBarAll" Grid.Row="1" Height="26" Width="780"  Visibility="{Binding Path=DataContext, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, Converter={StaticResource IsVisibleConverter}}"
+                     Value="{Binding Path=PositionInElements, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                     Maximum="{Binding Path=MaxElements, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ProgressBar>
+            <ProgressBar x:Name="progressBarCurrentFile" Grid.Row="2" Height="26" Width="780" Visibility="{Binding Path=DataContext, UpdateSourceTrigger=PropertyChanged, Mode=OneWay, Converter={StaticResource IsVisibleConverter}}"
+                     Value="{Binding Path=PositionInCurrentElement, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                     Maximum="{Binding Path=CurrentElementVolume, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></ProgressBar>
             <Button x:Name="button1" Content="Скопировать" Grid.Row="3" Height="26" Width="120"  Margin="620,0,10,0" Click="button1_Click"></Button>
         </Grid>
 

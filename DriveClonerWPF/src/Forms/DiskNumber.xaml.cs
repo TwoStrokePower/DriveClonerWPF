@@ -31,6 +31,7 @@ namespace DriveClonerWPF
         private SettingsForm settings = null;
         private BackgroundWorker backgroundWorker = new BackgroundWorker();
 
+
         public DiskNumber()
         {
             InitializeComponent();
@@ -113,7 +114,7 @@ namespace DriveClonerWPF
 
         private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            insertDrive.Close();
+            this.Close();
         }
 
         private void BackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -126,6 +127,7 @@ namespace DriveClonerWPF
         {
             SetCurrFormToParam();
             OpenDrive();
+            backgroundWorker.WorkerSupportsCancellation = true;
             backgroundWorker.DoWork += BackgroundWorker_DoWork;
             backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
             backgroundWorker.RunWorkerAsync();
